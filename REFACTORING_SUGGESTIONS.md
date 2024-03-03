@@ -14,3 +14,6 @@
 ### Auth
 - in [StatelessAuthenticationFilter.java](src%2Fmain%2Fjava%2Foutout%2Fsecurity%2FStatelessAuthenticationFilter.java) JWT Token should have more information about the user and should be validated properly (expiration, issuer, etc.)
 
+### Tests
+- As there are no Service or repository classes, there are no tests for them. The tests should be added for the service and repository classes and make unit testing for each service.
+- The tests should be more descriptive and should cover more scenarios.
