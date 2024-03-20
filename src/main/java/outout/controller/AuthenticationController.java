@@ -19,6 +19,7 @@ import outout.view.AuthenticationToken;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -36,7 +37,8 @@ public class AuthenticationController {
 
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
-    public ResponseEntity<AuthenticationToken> authenticate(@RequestBody AccountCredentials ac) {
+    public ResponseEntity<AuthenticationToken> authenticate(@Valid @RequestBody AccountCredentials ac) {
+
         Query q = em.createQuery("select u from User u where u.username = :username");
         q.setParameter("username", ac.getUsername());
         q.setMaxResults(1);

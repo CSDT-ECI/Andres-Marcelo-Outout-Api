@@ -1,7 +1,17 @@
 package outout.view;
 
+import org.hibernate.validator.constraints.Length;
+import org.springframework.beans.factory.annotation.Required;
+
+import javax.validation.constraints.NotNull;
+
 public class AccountCredentials {
+
+    @NotNull
+    @Length(min = 5, max = 20)
     private String username;
+    @NotNull
+    @Length(min = 10, max = 20)
     private String password;
 
     public String getUsername() {

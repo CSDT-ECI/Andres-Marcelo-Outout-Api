@@ -1,5 +1,7 @@
 package outout.model;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 import javax.persistence.*;
 
 @Entity
@@ -8,9 +10,11 @@ public class User {
     @SequenceGenerator(name = "user_generator", sequenceName = "user_seq")
     private Long id;
 
-    @Column
+    @NotBlank
+    @Column(unique = true, nullable = false)
     private String username;
 
+    @NotBlank
     @Column
     private String password;
 

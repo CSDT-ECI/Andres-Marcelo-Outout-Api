@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import outout.model.User;
+import outout.services.AccountService.IAccountService;
 import outout.view.AccountCreationResult;
 import outout.view.AccountCredentials;
 
@@ -31,10 +32,14 @@ public class CreateAccountController {
     @Autowired
     private PasswordEncoder encoder;
 
+    @Autowired
+    private IAccountService accountService;
+
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
     @Transactional
     public ResponseEntity<AccountCreationResult> createAccount(@RequestBody AccountCredentials ac) {
+        accountService.createAccount(ac);
         ResponseEntity<AccountCreationResult> r;
         String u = ac.getUsername();
         String p = ac.getPassword();
