@@ -1,6 +1,9 @@
 package outout.services.AuthenticationService;
 
+import outout.view.AccountCredentials;
+import outout.view.AuthenticationToken;
+
 public interface IAuthenticationService {
-    public void authenticateUser(String username, String password);
+    public AuthenticationToken authenticateUser(AccountCredentials accountCredentials);
 
 }

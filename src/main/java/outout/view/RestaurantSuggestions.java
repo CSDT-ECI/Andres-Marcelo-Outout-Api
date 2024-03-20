@@ -5,6 +5,12 @@ import java.util.List;
 public class RestaurantSuggestions {
     private List<RestaurantSuggestion> restaurantSuggestions;
 
+    public RestaurantSuggestions() {
+    }
+    public RestaurantSuggestions(List<RestaurantSuggestion> restaurantSuggestions) {
+        this.restaurantSuggestions = restaurantSuggestions;
+    }
+
     public List<RestaurantSuggestion> getRestaurantSuggestions() {
         return restaurantSuggestions;
     }

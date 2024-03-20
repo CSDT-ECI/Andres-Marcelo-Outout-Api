@@ -14,7 +14,7 @@ public class DatabaseCleanup {
 
     public void deleteUsers() {
         try(Connection connection = dataSource.getConnection()){
-            PreparedStatement statement = connection.prepareStatement("delete from user");
+            PreparedStatement statement = connection.prepareStatement("delete from users");
             statement.execute();
         }
         catch(SQLException exc) {

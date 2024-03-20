@@ -11,7 +11,7 @@ public class AccountCredentials {
     @Length(min = 5, max = 20)
     private String username;
     @NotNull
-    @Length(min = 10, max = 20)
+    @Length(min = 10, max = 50)
     private String password;
 
     public String getUsername() {

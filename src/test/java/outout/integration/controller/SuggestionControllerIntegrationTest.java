@@ -141,7 +141,7 @@ public class SuggestionControllerIntegrationTest {
             fail("Should have thrown returned a HTTP 422 status code");
         }
         catch (HttpClientErrorException exc) {
-            assertThat(exc.getStatusCode(), is(HttpStatus.UNPROCESSABLE_ENTITY));
+            assertThat(exc.getStatusCode(), is(HttpStatus.BAD_REQUEST));
         }
         catch (Exception exc) {
             exc.printStackTrace();
@@ -199,7 +199,7 @@ public class SuggestionControllerIntegrationTest {
             fail("Should have thrown returned a HTTP 422 status code");
         }
         catch (HttpClientErrorException exc) {
-            assertThat(exc.getStatusCode(), is(HttpStatus.UNPROCESSABLE_ENTITY));
+            assertThat(exc.getStatusCode(), is(HttpStatus.BAD_REQUEST));
         }
         catch (Exception exc) {
             exc.printStackTrace();

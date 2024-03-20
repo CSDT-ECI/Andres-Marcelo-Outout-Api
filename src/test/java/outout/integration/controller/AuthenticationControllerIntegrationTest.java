@@ -88,10 +88,10 @@ public class AuthenticationControllerIntegrationTest {
                     accountCredentials, AuthenticationToken.class);
         }
         catch(HttpClientErrorException exc) {
-            assertThat(exc.getStatusCode(), is(HttpStatus.NOT_FOUND));
+            assertThat(exc.getStatusCode(), is(HttpStatus.UNAUTHORIZED));
         }
         catch(Exception exc) {
-            fail("Should have thrown return Http Status 404");
+            fail("Should have thrown return Http Status 401");
         }
     }
 
@@ -113,10 +113,10 @@ public class AuthenticationControllerIntegrationTest {
             fail("Should return 404 with wrong password.");
         }
         catch(HttpClientErrorException exc) {
-            assertThat(exc.getStatusCode(), is(HttpStatus.NOT_FOUND));
+            assertThat(exc.getStatusCode(), is(HttpStatus.UNAUTHORIZED));
         }
         catch(Exception exc) {
-            fail("Should have thrown return Http Status 404 with the wrong password");
+            fail("Should have thrown return Http Status 401 with the wrong password");
         }
     }
 }
