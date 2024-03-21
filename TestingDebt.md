@@ -3,9 +3,9 @@
 ## Overview
 This project contains only integration tests for controller layer, due to high coupling between the controller and the service layer. The service layer is not tested, and the integration tests are not implemented.
 
-> [!NOTE] :mega:
-> Given this situation, it is necessary to do a refactoring to decouple the controller and the service layer, and implement integration tests.
-> Even though there are no tests for the service layer, the project contains a good coverage in overall.
+> [!NOTE] 
+> :mega: Given this situation, it is necessary to do a refactoring to decouple the controller and the service layer, and implement integration tests.
+> Even though there are no tests for the service layer, the project contains a good coverage.
 ![img.png](img/CoverageBefore.png)
 
 ## Testing Debt :gear:
