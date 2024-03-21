@@ -1,9 +1,6 @@
 package outout.model;
 
-import org.apache.tomcat.jni.Local;
-
 import javax.persistence.*;
-import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -21,18 +18,6 @@ public class Suggestion {
 
     @Column
     private Date suggestedDate;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(final Long id) {
-        this.id = id;
-    }
-
-    public String getSuggestedBy() {
-        return suggestedBy;
-    }
 
     public void setSuggestedBy(final String suggestedBy) {
         this.suggestedBy = suggestedBy;

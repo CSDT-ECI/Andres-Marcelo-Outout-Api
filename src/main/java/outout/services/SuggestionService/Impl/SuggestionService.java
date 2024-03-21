@@ -23,7 +23,7 @@ public class SuggestionService implements ISuggestionService {
     public void suggestRestaurant(RestaurantSuggestion suggestion, String username, Date date) throws SuggestionException {
         List<Suggestion> restaurantSuggestions = suggestionRepository.getSuggestionsByDate(date);
         List<Suggestion> userSuggestions = suggestionRepository.GetSuggestionsByUserAndDate(username, date);
-        if(restaurantSuggestions.size() == 0 && userSuggestions.size() < 2) {
+        if(restaurantSuggestions.isEmpty() && userSuggestions.size() < 2) {
             Suggestion newSuggestion = new Suggestion();
             newSuggestion.setSuggestedBy(username);
             newSuggestion.setSuggestion(suggestion.getRestaurant());
@@ -31,7 +31,7 @@ public class SuggestionService implements ISuggestionService {
             suggestionRepository.createSuggestion(newSuggestion);
         }
         else{
-            throw new SuggestionException("Suggestions requirements not met - 1 suggestion per user and 1 suggestion per restaurant per day.");
+            throw new SuggestionException("Suggestions requirements not met - 2 suggestion per user and 1 suggestion per restaurant per day.");
         }
     }
 

@@ -3,6 +3,7 @@ package outout.repository.SuggestionRepository.Impl;
 import org.springframework.stereotype.Component;
 import outout.model.Suggestion;
 import outout.repository.SuggestionRepository.ISuggestionRepository;
+import outout.services.SuggestionService.Exception.SuggestionException;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -19,15 +20,6 @@ public class SuggestionRepository implements ISuggestionRepository {
     @Override
     public void createSuggestion(Suggestion suggestion) {
         entityManager.persist(suggestion); 
-    }
-
-    @Override
-    public List<Suggestion> GetSuggestionsByRestaurantAndDate(String restaurant, Date date) {
-        Query suggestionsByRestaurantQuery = entityManager.createQuery("select s from Suggestion s where s.suggestion = :suggestion " +
-                "and trunc(s.suggestedDate) = trunc(:suggestedDate)");
-        suggestionsByRestaurantQuery.setParameter("suggestion", restaurant);
-        suggestionsByRestaurantQuery.setParameter("suggestedDate", date);
-        return suggestionsByRestaurantQuery.getResultList();
     }
 
     @Override

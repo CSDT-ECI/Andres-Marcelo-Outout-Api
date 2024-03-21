@@ -1,6 +1,5 @@
 package outout.services.AccountService.Impl;
 
-import org.h2.jdbc.JdbcSQLException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
@@ -10,7 +9,6 @@ import outout.services.AccountService.IAccountService;
 import outout.repository.AccountRepository.IAccountRepository;
 import outout.view.AccountCredentials;
 
-import javax.persistence.PersistenceException;
 
 @Component("accountService")
 public class AccountService implements IAccountService {
@@ -27,15 +25,7 @@ public class AccountService implements IAccountService {
         user.setUsername(accountCredentials.getUsername());
         user.setPassword(passwordEncoder.encode(accountCredentials.getPassword()));
         accountRepository.createAccount(user);
-
     }
 
-    @Override
-    public User getAccount(String username) {
-        return null;
-    }
 
-    private boolean CheckCredentials(String username, String password) {
-        return false;
-    }
 }
