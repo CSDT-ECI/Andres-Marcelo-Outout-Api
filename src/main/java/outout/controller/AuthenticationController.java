@@ -17,10 +17,7 @@ import outout.services.AuthenticationService.IAuthenticationService;
 import outout.view.AccountCredentials;
 import outout.view.AuthenticationToken;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 import java.util.List;
 
 @Controller

@@ -1,6 +1,6 @@
 package outout.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 public class Restaurant {

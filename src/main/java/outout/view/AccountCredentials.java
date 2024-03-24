@@ -1,9 +1,9 @@
 package outout.view;
 
 import org.hibernate.validator.constraints.Length;
-import org.springframework.beans.factory.annotation.Required;
 
-import javax.validation.constraints.NotNull;
+
+import jakarta.validation.constraints.NotNull;
 
 public class AccountCredentials {
 

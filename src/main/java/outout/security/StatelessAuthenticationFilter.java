@@ -3,18 +3,16 @@ package outout.security;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
 import org.springframework.web.filter.GenericFilterBean;
 
-import javax.servlet.FilterChain;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 public class StatelessAuthenticationFilter extends GenericFilterBean {
@@ -36,7 +34,8 @@ public class StatelessAuthenticationFilter extends GenericFilterBean {
         try {
             Jws<Claims> jsonWebToken = Jwts.parser()
                     .setSigningKey(tokenSecret)
-                    .parseClaimsJws(token);
+                    .build().parseClaimsJws(token);
+
             String username = jsonWebToken.getBody().getSubject();
             authentication = new UserAuthentication(username);
         }
@@ -46,4 +45,5 @@ public class StatelessAuthenticationFilter extends GenericFilterBean {
         SecurityContextHolder.getContext().setAuthentication(authentication);
         chain.doFilter(request, response);
     }
+
 }

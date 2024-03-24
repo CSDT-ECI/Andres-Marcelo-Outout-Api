@@ -6,11 +6,9 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.runners.MockitoJUnitRunner;
-import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.util.ReflectionTestUtils;
-import outout.OutoutApplication;
 import outout.model.User;
 import outout.repository.AccountRepository.IAccountRepository;
 import outout.services.AuthenticationService.IAuthenticationService;
@@ -24,7 +22,6 @@ import static org.hamcrest.core.IsNull.nullValue;
 import static org.junit.Assert.assertThat;
 
 @RunWith(MockitoJUnitRunner.class)
-@SpringApplicationConfiguration(classes = OutoutApplication.class)
 public class AuthenticationServiceTests {
 
     @Mock
@@ -39,7 +36,7 @@ public class AuthenticationServiceTests {
 
     @Before
     public void setUp() {
-        ReflectionTestUtils.setField(authenticationService, "tokenSecret", "tokensecret");
+        ReflectionTestUtils.setField(authenticationService, "tokenSecret", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQSflKxwRJSMeKKF2QT4fwpMeJf36POk6yJVadQssw5cAAB123");
     }
 
     @Test
@@ -89,7 +86,6 @@ public class AuthenticationServiceTests {
             }
         };
         Mockito.when(accountRepository.getAccount(Mockito.anyString())).thenReturn(authUser);
-        Mockito.when(passwordEncoder.matches(authUser.getPassword(), accountCredentials.getPassword())).thenReturn(false);
         //Act
         AuthenticationToken response =  authenticationService.authenticateUser(accountCredentials);
         //Assert

@@ -5,8 +5,7 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.runners.MockitoJUnitRunner;
-import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.mockito.junit.MockitoJUnitRunner;
 import outout.OutoutApplication;
 import outout.model.Restaurant;
 import outout.model.Suggestion;
@@ -23,7 +22,6 @@ import java.util.Date;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
-@SpringApplicationConfiguration(classes = OutoutApplication.class)
 public class SuggestionServiceTests {
 
     @Mock
@@ -86,7 +84,6 @@ public class SuggestionServiceTests {
         RestaurantSuggestion restaurantSuggestion = new RestaurantSuggestion();
         restaurantSuggestion.setRestaurant(restaurant.getName());
 
-        Mockito.doNothing().when(suggestionRepository).createSuggestion(Mockito.any(Suggestion.class));
         Mockito.when(suggestionRepository.GetSuggestionsByUserAndDate(Mockito.anyString(), Mockito.any(Date.class)))
                 .thenReturn(new ArrayList<Suggestion>(){{
                     add(new Suggestion());

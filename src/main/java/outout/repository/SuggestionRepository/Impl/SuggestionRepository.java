@@ -3,11 +3,10 @@ package outout.repository.SuggestionRepository.Impl;
 import org.springframework.stereotype.Component;
 import outout.model.Suggestion;
 import outout.repository.SuggestionRepository.ISuggestionRepository;
-import outout.services.SuggestionService.Exception.SuggestionException;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.Query;
 import java.util.Date;
 import java.util.List;
 

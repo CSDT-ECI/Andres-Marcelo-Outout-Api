@@ -1,8 +1,8 @@
 package outout.model;
 
+import jakarta.persistence.*;
 import org.hibernate.validator.constraints.NotBlank;
 
-import javax.persistence.*;
 
 @Entity
 @Table(name = "users")

@@ -14,10 +14,9 @@ import outout.services.SuggestionService.ISuggestionService;
 import outout.view.RestaurantSuggestion;
 import outout.view.RestaurantSuggestions;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-import javax.transaction.Transactional;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.transaction.Transactional;
 import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;

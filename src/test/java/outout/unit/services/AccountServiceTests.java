@@ -5,10 +5,8 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.runners.MockitoJUnitRunner;
-import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import outout.OutoutApplication;
 import outout.model.User;
 import outout.repository.AccountRepository.Exceptions.AccountRepositoryException;
 import outout.repository.AccountRepository.IAccountRepository;
@@ -19,7 +17,6 @@ import outout.view.AccountCredentials;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 @RunWith(MockitoJUnitRunner.class)
-@SpringApplicationConfiguration(classes = OutoutApplication.class)
 public class AccountServiceTests {
 
     @Mock

@@ -1,16 +1,12 @@
 package outout.repository.AccountRepository.Impl;
-
-import org.h2.jdbc.JdbcSQLException;
-import org.hibernate.exception.ConstraintViolationException;
-import org.hibernate.exception.JDBCConnectionException;
 import org.springframework.stereotype.Component;
 import outout.model.User;
 import outout.repository.AccountRepository.Exceptions.AccountRepositoryException;
 import outout.repository.AccountRepository.IAccountRepository;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceException;
-import javax.persistence.Query;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.Query;
+
 import java.util.List;
 
 @Component("accountRepository")
