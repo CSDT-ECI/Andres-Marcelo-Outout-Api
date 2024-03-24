@@ -7,6 +7,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import outout.OutoutApplication;
 import outout.model.User;
 import outout.repository.AccountRepository.Exceptions.AccountRepositoryException;
@@ -24,7 +25,8 @@ public class AccountServiceTests {
     @Mock
     private IAccountRepository accountRepository;
 
-
+    @Mock
+    private PasswordEncoder passwordEncoder;
     @InjectMocks
     private IAccountService accountService = new AccountService();
 
