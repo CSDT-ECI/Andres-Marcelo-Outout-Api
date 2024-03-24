@@ -74,6 +74,13 @@ jacoco {
     toolVersion = "0.8.11"
     reportsDirectory = layout.projectDirectory.dir('customJacocoReportDir')
 }
+sonarqube {
+    properties {
+        property "sonar.projectKey", "andres-marcelo-csdt-project_outout-api"
+        property "sonar.organization", "andres-marcelo-csdt-project"
+        property "sonar.host.url", "https://sonarcloud.io"
+    }
+}
 
 jacocoTestReport {
     reports {
