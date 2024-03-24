@@ -9,7 +9,7 @@
 In this branch I have implemented the sonarcloud and github actions integrations to improve the quality of the project.
 
 > [!NOTE]
-> Due to inconvenients with the permissions of this organization, the exercise will be replicated in my personal account, but the code will be the same.
+> Due to inconvenients with the permissions of this organization, the exercise is replicated in my personal account, but the code will be the same. I just cloned the repo to integrate sonarcloud and github actions without restrictions.
 > You can find the sonarcloud analysis [here](https://sonarcloud.io/summary/new_code?id=andres-marcelo-csdt-project_outout-api) also, can see the GH Actions [here](https://github.com/AndresMarcelo7/outoutapi/actions). As soon as the permissions are granted, I will update the links 😉.
 
 ## Sonarcloud Analysis Findings
