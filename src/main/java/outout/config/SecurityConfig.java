@@ -13,8 +13,6 @@ import org.springframework.security.web.context.SecurityContextRepository;
 import outout.security.StatelessAuthenticationFilter;
 
 import jakarta.servlet.Filter;
-
-import static org.springframework.security.config.Customizer.withDefaults;
 import static org.springframework.security.config.http.SessionCreationPolicy.STATELESS;
 
 @Configuration
