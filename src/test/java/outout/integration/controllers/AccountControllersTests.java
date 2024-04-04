@@ -129,4 +129,21 @@ public class AccountControllersTests {
                 .statusCode(401);
     }
 
+    //Generate new test validating that the account is returning bad request when i send the wrong body for the request
+    @Test
+    public void givenAccountCreateRequest_Should_Return_BadRequest() {
+            //Arrange
+            //Json body dictionary
+            HashMap<String, String> body = new HashMap<>();
+            body.put("username", "testme");
+            //Act and Assert
+            //add media type to the request
+            given().contentType("application/json")
+                    .when().body(body)
+                    .post("/account/create")
+                    .then()
+                    .statusCode(400);
+        }
+
+
 }
