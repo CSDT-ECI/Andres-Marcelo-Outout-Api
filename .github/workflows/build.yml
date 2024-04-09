@@ -43,13 +43,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: neonidian/teams-notify-build-status@v3
+        needs: [ build ]
         with:
           webhookUrl: ${{ secrets.TEAMS_INCOMING_WEBHOOK_URL }}
           title: New Pull Request on Project
           titleBackgroundColor: ${{ steps.build.outcome }}
           status: ${{ steps.build.outcome }}
           message: >-
-            Unit tests have been run for version ${{ steps.versioning.outputs.semver }}
+            New Pr has been created! check it out  ${{ steps.versioning.outputs.semver }}
         env:
           SHOULD_DISPLAY_ACTOR_LABEL: true
           SHOULD_DISPLAY_VIEW_RUN_BUTTON: true
