@@ -41,9 +41,9 @@ jobs:
   teamsmessage:
     name: Publish message in MS teams channel
     runs-on: ubuntu-latest
+    needs: [ build ]
     steps:
       - uses: neonidian/teams-notify-build-status@v3
-        needs: [ build ]
         with:
           webhookUrl: ${{ secrets.TEAMS_INCOMING_WEBHOOK_URL }}
           title: New Pull Request on Project
