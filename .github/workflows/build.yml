@@ -38,15 +38,14 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: ./gradlew build sonarqube --info
 
-  run_code_review:
-    runs-on: ubuntu-latest
+  write_data_in_teams:
+    name: Publish message in MS teams channel
     steps:
-      - uses: actions/checkout@v3
+      - uses: neonidian/teams-notify-build-status@v3
+        if: always()
         with:
-          fetch-depth: 0
-      - name: Code Review GPT
-        uses: mattzcarey/code-review-gpt@v0.1.4-alpha
-        with:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          MODEL: 'gpt-3.5-turbo'
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          webhookUrl: ${{ secrets.TEAMS_INCOMING_WEBHOOK_URL }}
+          message: Workflow has been run
+          titleBackgroundColor: ${{ job.status }}
+        env:
+          SHOULD_DISPLAY_VIEW_COMMIT_BUTTON: true
