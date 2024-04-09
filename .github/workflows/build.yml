@@ -38,8 +38,9 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: ./gradlew build sonarqube --info
 
-  write_data_in_teams:
+  teamsmessage:
     name: Publish message in MS teams channel
+    runs-on: ubuntu-latest
     steps:
       - uses: neonidian/teams-notify-build-status@v3
         if: always()
