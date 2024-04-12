@@ -1,13 +1,5 @@
 package outout.unit.services;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.runners.MockitoJUnitRunner;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import outout.OutoutApplication;
 import outout.model.Restaurant;
 import outout.model.Suggestion;
 import outout.repository.SuggestionRepository.ISuggestionRepository;
@@ -17,13 +9,19 @@ import outout.services.SuggestionService.Impl.SuggestionService;
 import outout.view.RestaurantSuggestion;
 import outout.view.RestaurantSuggestions;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.junit.jupiter.MockitoExtension;
+
 import java.util.ArrayList;
 import java.util.Date;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@RunWith(MockitoJUnitRunner.class)
-@SpringApplicationConfiguration(classes = OutoutApplication.class)
+@ExtendWith(MockitoExtension.class)
 public class SuggestionServiceTests {
 
     @Mock
@@ -86,21 +84,16 @@ public class SuggestionServiceTests {
         RestaurantSuggestion restaurantSuggestion = new RestaurantSuggestion();
         restaurantSuggestion.setRestaurant(restaurant.getName());
 
-        Mockito.doNothing().when(suggestionRepository).createSuggestion(Mockito.any(Suggestion.class));
         Mockito.when(suggestionRepository.GetSuggestionsByUserAndDate(Mockito.anyString(), Mockito.any(Date.class)))
-                .thenReturn(new ArrayList<Suggestion>(){{
+                .thenReturn(new ArrayList<Suggestion>() {{
                     add(new Suggestion());
                     add(new Suggestion());
                 }}); //User Suggestions
         Mockito.when(suggestionRepository.getSuggestionsByDate(Mockito.any(Date.class))).thenReturn(new ArrayList<>()); //Restaurant Suggestions By Date
-        //Act
-        try {
+        //Act & Assert
+        SuggestionException exception = org.junit.jupiter.api.Assertions.assertThrows(SuggestionException.class, () -> {
             suggestionService.suggestRestaurant(restaurantSuggestion, "testme", new Date());
-        } catch (SuggestionException e) {
-            //Assert
-            assertEquals(e.getMessage(), "Suggestions requirements not met - 2 suggestion per user and 1 suggestion per restaurant per day.");
-        }
+        });
+        assertEquals("Suggestions requirements not met - 2 suggestion per user and 1 suggestion per restaurant per day.", exception.getMessage());
     }
-
-
 }

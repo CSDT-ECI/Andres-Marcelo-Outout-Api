@@ -1,7 +1,7 @@
 package outout.model;
 
-import javax.persistence.*;
-import java.util.Date;
+import jakarta.persistence.*;
+import java.sql.Date;
 
 @Entity
 public class Suggestion {

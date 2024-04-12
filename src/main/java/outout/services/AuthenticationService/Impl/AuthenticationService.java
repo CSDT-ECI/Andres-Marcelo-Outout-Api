@@ -8,7 +8,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import outout.model.User;
 import outout.repository.AccountRepository.IAccountRepository;
-import outout.services.AccountService.IAccountService;
 import outout.services.AuthenticationService.IAuthenticationService;
 import outout.view.AccountCredentials;
 import outout.view.AuthenticationToken;

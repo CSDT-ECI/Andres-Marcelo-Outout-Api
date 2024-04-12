@@ -6,7 +6,7 @@ This project contains only integration tests for controller layer, due to high c
 > [!NOTE] 
 > :mega: Given this situation, it is necessary to do a refactoring to decouple the controller and the service layer, and implement integration tests.
 > Even though there are no tests for the service layer, the project contains a good coverage.
-![img.png](img/CoverageBefore.png)
+![img.png](../img/CoverageBefore.png)
 
 ## Testing Debt :gear:
 - Integration tests are implemented but are not clear.
@@ -24,7 +24,7 @@ This project contains only integration tests for controller layer, due to high c
 
 ## Results :chart_with_upwards_trend:
 - **Refactoring**: The refactoring was successful, and the controller and the service layer are decoupled. you can see that in [services](src%2Fmain%2Fjava%2Foutout%2Fservices) folder and in [repository](src%2Fmain%2Fjava%2Foutout%2Frepository) folder, there are injected using Springs `@Autowired` Dependency Injection.
-- **Unit Testing**: I implemented unit tests for the service layer in [unit tests](src%2Ftest%2Fjava%2Foutout%2Funit), and we improved the overall coverage. ![img.png](img/CoverageAfterTestUpdates.png)
+- **Unit Testing**: I implemented unit tests for the service layer in [unit tests](src%2Ftest%2Fjava%2Foutout%2Funit), and we improved the overall coverage. ![img.png](../img/CoverageAfterTestUpdates.png)
 > [!NOTE]
 > The service layer is tested using `Mockito` and `JUnit` for the repository layer.
   - In [AccountServiceTests.java](src%2Ftest%2Fjava%2Foutout%2Funit%2Fservices%2FAccountServiceTests.java) The `AccountService` is tested to validate the business logic: Create account only if the username does not exist, and the password is not empty.
