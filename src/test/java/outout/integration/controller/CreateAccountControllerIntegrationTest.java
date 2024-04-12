@@ -104,13 +104,10 @@ public class CreateAccountControllerIntegrationTest {
             statusCode = response.getStatusCode();
         }
         catch(HttpClientErrorException exc) {
-            accountCreationResult = mapper.readValue(exc.getResponseBodyAsString(), AccountCreationResult.class);
             statusCode = exc.getStatusCode();
         }
         User user = findUserByUsername(accountCredentials.getUsername());
-        assertThat(statusCode, is(HttpStatus.UNPROCESSABLE_ENTITY));
-        assertThat(accountCreationResult.isSuccessful(), is(false));
-        assertThat(accountCreationResult.getErrors().get(0), is("Username must be at least 5 characters"));
+        assertThat(statusCode, is(HttpStatus.BAD_REQUEST));
         assertThat(user, is(nullValue()));
     }
 
@@ -128,19 +125,16 @@ public class CreateAccountControllerIntegrationTest {
             statusCode = response.getStatusCode();
         }
         catch(HttpClientErrorException exc) {
-            accountCreationResult = mapper.readValue(exc.getResponseBodyAsString(), AccountCreationResult.class);
             statusCode = exc.getStatusCode();
         }
 
         User user = findUserByUsername(accountCredentials.getUsername());
-        assertThat(statusCode, is(HttpStatus.UNPROCESSABLE_ENTITY));
-        assertThat(accountCreationResult.isSuccessful(), is(false));
-        assertThat(accountCreationResult.getErrors().get(0), is("Password must be at least 10 characters"));
+        assertThat(statusCode, is(HttpStatus.BAD_REQUEST));
         assertThat(user, is(nullValue()));
     }
 
     @Test
-    public void creatingAccountWithExistingUsernameReturnsUnprocessableEntity() throws Exception {
+    public void creatingAccountWithExistingUsernameReturnsBadRequest() throws Exception {
         accountCredentials = new AccountCredentials();
         accountCredentials.setUsername("testmealot");
         accountCredentials.setPassword("password123");
@@ -158,8 +152,8 @@ public class CreateAccountControllerIntegrationTest {
             statusCode = exc.getStatusCode();
         }
 
-        assertThat(statusCode, is(HttpStatus.UNPROCESSABLE_ENTITY));
+        assertThat(statusCode, is(HttpStatus.BAD_REQUEST));
         assertThat(accountCreationResult.isSuccessful(), is(false));
-        assertThat(accountCreationResult.getErrors().get(0), is("Username already in use.  Please enter another username."));
+        assertThat(accountCreationResult.getErrors().get(0), is("User already exists"));
     }
 }

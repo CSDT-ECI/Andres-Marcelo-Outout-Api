@@ -18,7 +18,7 @@ public class DataLoader {
 
     public void insertUser(String username, String password) {
         try (Connection connection = dataSource.getConnection();
-             PreparedStatement statement = connection.prepareStatement("insert into user(id,username,password) values(user_seq.nextval,?,?)")) {
+             PreparedStatement statement = connection.prepareStatement("insert into users(id,username,password) values(user_seq.nextval,?,?)")) {
             statement.setString(1, username);
             statement.setString(2, passwordEncoder.encode(password));
             statement.executeUpdate();
