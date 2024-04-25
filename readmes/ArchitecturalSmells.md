@@ -24,7 +24,8 @@ The following results are a comparative analysis between the original project an
 - ### Original Codebase Analysis: ![statsoriginal.png](..%2Fimg%2Fstatsoriginal.png)
 - ### Refactored Codebase Analysis: ![statsMejorado.png](..%2Fimg%2FstatsMejorado.png)
 
->[!IMPORTANT] Here we can see that the original code has a high level of rigidity but a simple design, and the refactored code has a more complex design but with a lower level of rigidity, which indicates that the refactoring process has improved the flexibility and maintainability of the codebase.
+>[!IMPORTANT] 
+Here we can see that the original code has a high level of rigidity but a simple design, and the refactored code has a more complex design but with a lower level of rigidity, which indicates that the refactoring process has improved the flexibility and maintainability of the codebase.
 
 ## Dependencies Analysis
 The same comparative analysis can be done with the dependencies between classes and packages in the codebase.
@@ -33,5 +34,6 @@ The same comparative analysis can be done with the dependencies between classes 
 - ### Refactored Codebase Dependencies: ![arquitecturaMejorado.png](..%2Fimg%2FarquitecturaMejorado.png)
 
 
->[!IMPORTANT] With these two images, we can conclude that the original codebase, despite its simple design, exhibits some coupling and unmanaged dependencies between classes and packages. In the other hand, the refactored codebase demonstrates a more intricate design but with reduced coupling and clearer dependencies among classes and packages. This improvement facilitates a deeper understanding of the codebase, enhances maintainability, and streamlines the onboarding process for new developers.
+>[!IMPORTANT] 
+With these two images, we can conclude that the original codebase, despite its simple design, exhibits some coupling and unmanaged dependencies between classes and packages. In the other hand, the refactored codebase demonstrates a more intricate design but with reduced coupling and clearer dependencies among classes and packages. This improvement facilitates a deeper understanding of the codebase, enhances maintainability, and streamlines the onboarding process for new developers.
 
