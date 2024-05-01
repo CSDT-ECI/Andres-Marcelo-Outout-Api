@@ -1,7 +1,7 @@
 theme: jekyll-theme-minimal
 title: Refactoring Outout API Project -> Analizing software debt in open source projects
 description: CSDT 2024-1 Andres Felipe Marcelo
-show_downloads: False
+show_downloads: True
 navigation:
   - title: Home
     url: readmes/home
