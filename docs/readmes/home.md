@@ -1,5 +1,5 @@
-![eci.jpeg](img%2Feci.jpeg)
 
+![eci.jpeg](..%2Fimg%2Feci.jpeg)
 # CSDT Final Delivery - Refactoring Outout API
 
 This is the final delivery of the project for the 2024 semester. The project is an API that allows users to review restaurants and get suggestions based on their preferences.
@@ -30,10 +30,10 @@ If you want to see source code, you can go to the [GitHub Repo](https://github.c
 ## Documented Activities 📝
 
 - **Swagger Documentation**
-  ![swagger.png](img%2Fswagger.png)
+  ![swagger.png](..%2Fimg%2Fswagger.png)
 - **GitHub Actions CI/CD**
-  ![ghactionsimage.png](img%2Fghactionsimage.png)
+  ![ghactionsimage.png](..%2Fimg%2Fghactionsimage.png)
 - **SonarCloud Integration**
-  ![sonarcloudimage.png](img%2Fsonarcloudimage.png)
+![sonarcloudimage.png](..%2Fimg%2Fsonarcloudimage.png)
 - **Architecture and Design Integrations**
-- ![arquitecturaMejorado.png](img%2FarquitecturaMejorado.png)
+![arquitecturaMejorado.png](..%2Fimg%2FarquitecturaMejorado.png)
