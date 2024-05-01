@@ -4,11 +4,11 @@ description: CSDT 2024-1 Andres Felipe Marcelo
 show_downloads: False
 navigation:
   - title: Home
-    url: README
+    url: /README
   - title: Code Smells and Refactor
     url: readmes/CodeSmellsAndRefactor
   - title: Clean Code and XP
-    url: readmes/CleanCodeAndXP.md
+    url: readmes/CleanCodeAndXP
   - title: Testing Debt
     url: readmes/TestingDebt
   - title: Quality Models
