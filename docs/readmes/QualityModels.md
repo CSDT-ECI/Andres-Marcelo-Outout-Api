@@ -8,10 +8,6 @@
 
 In this branch I have implemented the sonarcloud and github actions integrations to improve the quality of the project.
 
-> [!NOTE]
-> Due to inconvenients with the permissions of this organization, the exercise is replicated in my personal account, but the code will be the same. I just cloned the repo to integrate sonarcloud and github actions without restrictions.
-> You can find the sonarcloud analysis [here](https://sonarcloud.io/summary/new_code?id=andres-marcelo-csdt-project_outout-api) also, can see the GH Actions [here](https://github.com/AndresMarcelo7/outoutapi/actions). As soon as the permissions are granted, I will update the links 😉.
-
 ## Sonarcloud Analysis Findings
 
 > [!TIP]
@@ -23,8 +19,7 @@ The Sonarcloud analysis provides a detailed overview of the code quality, securi
 ![img.png](../img/sonardash.png)
 
 1. **Compatibility** - SonarCloud and its plugins are only compatible with java versions above 11, so the project was updated to use Java 21.
-> [!NOTE]
-> 🤕 At the beginning of the project, java version was 8! so I had to update the version and with this, I had to update the dependencies and some code that was deprecated, another refactoring exercise that was not planned and was pretty diffiult.
+> **NOTE:** 🤕 At the beginning of the project, java version was 8! so I had to update the version and with this, I had to update the dependencies and some code that was deprecated, another refactoring exercise that was not planned and was pretty diffiult.
 > Also, The integration tests that were implemented were not compatible with the new version of java, so I had to update them too.
 2. **Code Coverage** - Sonarcloud doesn't provide code coverage as itself, but it can be integrated with other tools like JaCoCo ✅ to provide this information. In this case, the project has a good coverage, but it can be improved.
 3. **Code Smells** - The analysis identified several code smells in the project, including:

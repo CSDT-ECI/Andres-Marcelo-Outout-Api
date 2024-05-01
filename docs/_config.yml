@@ -5,8 +5,6 @@ show_downloads: False
 navigation:
   - title: Home
     url: /
-  - title: Setup
-    url: setup
   - title: Code Smells and Refactor
     url: readmes/CodeSmellsAndRefactor
   - title: Clean Code and XP

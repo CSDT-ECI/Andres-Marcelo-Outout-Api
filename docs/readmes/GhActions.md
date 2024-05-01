@@ -6,10 +6,7 @@ In this excersice I will complement the CI pipeline made in [QualityModels.md](Q
 
 ## Badges
 This is the badge that shows the status of the build process in the project:
-### Github Actions Badge! 🔧[![SonarCloud](https://github.com/CSDT-ECI/Andres-Marcelo-Outout-Api/actions/workflows/build.yml/badge.svg)](https://github.com/CSDT-ECI/Andres-Marcelo-Outout-Api/actions/workflows/build.yml)
-
-> [!NOTE]
-> The Sonarcloud analysis was first implemented in a personal account, now it is integrated in the organization account, but as the previous PRs are not fully merged, the full sonar analysis in *master* branch and the comparations with it are not available yet in sonarcloud! 🔧 but you can see the results of the pipeline running in the personal account in [QualityModels.md](QualityModels.md). When all the PRs are merged, the analysis will be available in Sonarcloud organization account.
+### GitHub Actions Badge! 🔧[![GhActionsPipeline](https://github.com/CSDT-ECI/Andres-Marcelo-Outout-Api/actions/workflows/build.yml/badge.svg)](https://github.com/CSDT-ECI/Andres-Marcelo-Outout-Api/actions/workflows/build.yml)
 
 ## Pipeline Steps
 The pipeline has the following steps:

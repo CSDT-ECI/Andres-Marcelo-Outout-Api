@@ -2,9 +2,8 @@
 
 ## Overview
 This project contains only integration tests for controller layer, due to high coupling between the controller and the service layer. The service layer is not tested, and the integration tests are not implemented.
-
-> [!NOTE] 
-> :mega: Given this situation, it is necessary to do a refactoring to decouple the controller and the service layer, and implement integration tests.
+ 
+> **NOTE 🔧:** Given this situation, it is necessary to do a refactoring to decouple the controller and the service layer, and implement integration tests.
 > Even though there are no tests for the service layer, the project contains a good coverage.
 ![img.png](../img/CoverageBefore.png)
 
@@ -14,7 +13,7 @@ This project contains only integration tests for controller layer, due to high c
 - There are no performance tests
 - There are no security tests (Injections, XSS, etc)
 
-> [!IMPORTANT]
+> **IMPORTANT**
 > For this exersice, we are going to focus on unit testing service layer and complete the coverage on some model classes.
 
 ## Testing Strategy :shield:
@@ -25,7 +24,7 @@ This project contains only integration tests for controller layer, due to high c
 ## Results :chart_with_upwards_trend:
 - **Refactoring**: The refactoring was successful, and the controller and the service layer are decoupled. you can see that in [services](src%2Fmain%2Fjava%2Foutout%2Fservices) folder and in [repository](src%2Fmain%2Fjava%2Foutout%2Frepository) folder, there are injected using Springs `@Autowired` Dependency Injection.
 - **Unit Testing**: I implemented unit tests for the service layer in [unit tests](src%2Ftest%2Fjava%2Foutout%2Funit), and we improved the overall coverage. ![img.png](../img/CoverageAfterTestUpdates.png)
-> [!NOTE]
+> **NOTE**
 > The service layer is tested using `Mockito` and `JUnit` for the repository layer.
   - In [AccountServiceTests.java](src%2Ftest%2Fjava%2Foutout%2Funit%2Fservices%2FAccountServiceTests.java) The `AccountService` is tested to validate the business logic: Create account only if the username does not exist, and the password is not empty.
   - In [AuthenticationServiceTests.java](src%2Ftest%2Fjava%2Foutout%2Funit%2Fservices%2FAuthenticationServiceTests.java) The `AuthenticationService` is tested to validate the business logic: Authenticate user only if the username and password are correct.
