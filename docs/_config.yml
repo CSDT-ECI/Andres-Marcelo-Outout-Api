@@ -1,7 +1,7 @@
 theme: jekyll-theme-minimal
-title: GitHub pages template
-description: A simple template based on minimal jekyll theme
-show_downloads: True
+title: Refactoring Outout API Project -> Analizing software debt in open source projects
+description: CSDT 2024-1 Andres Felipe Marcelo
+show_downloads: False
 navigation:
   - title: Home
     url: /
@@ -9,3 +9,16 @@ navigation:
     url: setup
   - title: Code Smells and Refactor
     url: readmes/CodeSmellsAndRefactor
+  - title: Clean Code and XP
+    url: readmes/CleanCodeAndXP.md
+  - title: Testing Debt
+    url: readmes/TestingDebt
+  - title: Quality Models
+    url: readmes/QualityModels
+  - title: Github Actions
+    url: readmes/GhActions
+  - title: DevEx - Space - Copilot
+    url: readmes/DevEx-Space-AI
+  - title: Architectural Smells
+    url: readmes/ArchitecturalSmells
+
